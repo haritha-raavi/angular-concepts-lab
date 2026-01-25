@@ -1,0 +1,11 @@
+<div class="ekart--search--product">
+  <!-- <input (input)= "updateSearchText($event)" [value]="searchText"> -->
+  <!-- <input class="ekart-search-product-input" [(ngModel)]="searchText" (input)="onSearchTextChanged()"> -->
+   <input class="ekart-search-product-input" #searchInput>
+  <button class="btn btn-search" (click)="updateSearchText()" >Search</button>
+</div>
+<div class="ekart-search-result-for">
+  @if(searchText){
+  <p><strong>Search for:</strong>{{searchText}}</p>
+  }
+</div>

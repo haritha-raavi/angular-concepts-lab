@@ -1,0 +1,48 @@
+<div class="ekart--product--container">
+  <!-- Property Binding
+  <img [src]="product.imagePath" />
+
+  String Interpolation
+  <img src="{{ product.imagePath }}" />
+  <p>Name: {{ product.name }}</p>
+  <p>Price: {{ '$' + product.price }}</p>
+  <p>Color: {{ product.color }}</p>
+  <p>Discount:{{ product.discount }}</p>
+  <p>Discounted Price :{{ product.price - (product.price * product.discount) / 100 }}</p>
+  <p>Price after Discount : {{ getDiscountedPrice().toFixed(2) }}</p>
+  <p>{{ product.inStock > 0 ? 'Only' + product.inStock + 'items left' : 'Not in Stock' }}</p>
+
+  <button [disabled]="cartValue == 0" (click)="OnDecrement()">-</button>
+  <span>{{ cartValue }}</span>
+  <button [disabled]="cartValue == product.inStock" (click)="OnIncrement()">+</button>
+  <br />
+  <input value="{{ name }}" />
+  <input (input)="OnNameChange($event)" [value]="name" />
+  <p>Name={{ name }}</p> -->
+  <app-search (SearchTextChanged)="setSearchText($event)"></app-search>
+  <product-list [searchText]="searchText" #productListComponent></product-list>
+  @if(productListComponent.selectedProduct){
+  <product-details [productListComp]="productListComponent"></product-details>
+  }
+  <!-- <div *ngFor="let item of names" >
+    <p>Current Element : {{item}}</p>
+  </div> -->
+  <div class="ekart-featured-products">
+<div class="ekart-featured-product-heading">
+  <h1>Latest Arrivals in Popular Brands</h1>
+</div>
+
+  <featured-brands>
+    <h3 class="title">New Arrivals in Nike</h3>
+    <button class="call-to-action">Learn More in Nike</button>
+  </featured-brands>
+  <featured-brands>
+    <h3 class="title">New Arrivals in Addidas</h3>
+     <button class="call-to-action">Learn More in Addidas</button>
+  </featured-brands>
+  <featured-brands>
+    <h3 class="title">New Arrivals in Reebok</h3>
+     <button class="call-to-action">Learn More in Reebok</button>
+  </featured-brands>
+   </div>
+</div>
